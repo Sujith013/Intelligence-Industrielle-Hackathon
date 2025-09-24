@@ -1,0 +1,859 @@
+{
+  "sites": [
+    {
+      "site_id": "S-1",
+      "site_name": "Montreal Facility",
+      "location": "Toronto, ON",
+      "departments": [
+        {
+          "department_id": "S1D1",
+          "department_name": "Production",
+          "head": "Isabella Young",
+          "team": [
+            {
+              "name": "Emily White",
+              "role": "Technician",
+              "email": "lucas.hall@example.com",
+              "phone": "+1-514-793-8576"
+            },
+            {
+              "name": "Emily White",
+              "role": "Operator",
+              "email": "john.smith@example.com",
+              "phone": "+1-514-674-3584"
+            },
+            {
+              "name": "Emma Lewis",
+              "role": "Technician",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-336-1246"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Supervisor",
+              "email": "emma.lewis@example.com",
+              "phone": "+1-514-492-9496"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Supervisor",
+              "email": "isabella.young@example.com",
+              "phone": "+1-514-197-2610"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-1",
+              "type": "Conveyor",
+              "status": "maintenance",
+              "temperature": 55.93,
+              "vibration": 3.29,
+              "energy_consumption_kWh": 1680.88,
+              "last_maintenance": "2016-07-09",
+              "error": "Overheat",
+              "uptime_hours": 4618
+            },
+            {
+              "machine_id": "M-2",
+              "type": "3D Printer",
+              "status": "offline",
+              "temperature": 42.84,
+              "vibration": 3.97,
+              "energy_consumption_kWh": 4724.65,
+              "last_maintenance": "2020-10-22",
+              "error": "Power Failure",
+              "uptime_hours": 126
+            },
+            {
+              "machine_id": "M-3",
+              "type": "CNC",
+              "status": "error",
+              "temperature": 107.7,
+              "vibration": 2.48,
+              "energy_consumption_kWh": 1988.12,
+              "last_maintenance": "2023-10-03",
+              "error": null,
+              "uptime_hours": 4745
+            }
+          ]
+        },
+        {
+          "department_id": "S1D2",
+          "department_name": "Quality Control",
+          "head": "Mason Walker",
+          "team": [
+            {
+              "name": "John Smith",
+              "role": "Supervisor",
+              "email": "michael.green@example.com",
+              "phone": "+1-514-175-4617"
+            },
+            {
+              "name": "Liam Martin",
+              "role": "Analyst",
+              "email": "mason.walker@example.com",
+              "phone": "+1-514-411-5871"
+            },
+            {
+              "name": "John Smith",
+              "role": "Supervisor",
+              "email": "noah.clark@example.com",
+              "phone": "+1-514-608-4222"
+            },
+            {
+              "name": "Emma Lewis",
+              "role": "Analyst",
+              "email": "john.smith@example.com",
+              "phone": "+1-514-236-4133"
+            },
+            {
+              "name": "Noah Clark",
+              "role": "Technician",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-754-5557"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-4",
+              "type": "3D Printer",
+              "status": "offline",
+              "temperature": 87.69,
+              "vibration": 2.19,
+              "energy_consumption_kWh": 2153.11,
+              "last_maintenance": "2016-10-22",
+              "error": "Overheat",
+              "uptime_hours": 2003
+            },
+            {
+              "machine_id": "M-5",
+              "type": "Lathe",
+              "status": "maintenance",
+              "temperature": 44.59,
+              "vibration": 3.47,
+              "energy_consumption_kWh": 2525.96,
+              "last_maintenance": "2021-06-28",
+              "error": "Vibration Alert",
+              "uptime_hours": 4470
+            },
+            {
+              "machine_id": "M-6",
+              "type": "Lathe",
+              "status": "offline",
+              "temperature": 86.34,
+              "vibration": 1.9,
+              "energy_consumption_kWh": 2057.6,
+              "last_maintenance": "2017-09-14",
+              "error": "Sensor Fault",
+              "uptime_hours": 7382
+            }
+          ]
+        },
+        {
+          "department_id": "S1D3",
+          "department_name": "Maintenance",
+          "head": "Emma Lewis",
+          "team": [
+            {
+              "name": "Isabella Young",
+              "role": "Engineer",
+              "email": "emily.white@example.com",
+              "phone": "+1-514-743-2831"
+            },
+            {
+              "name": "Emma Lewis",
+              "role": "Analyst",
+              "email": "lucas.hall@example.com",
+              "phone": "+1-514-607-1418"
+            },
+            {
+              "name": "Noah Clark",
+              "role": "Analyst",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-912-9001"
+            },
+            {
+              "name": "Liam Martin",
+              "role": "Engineer",
+              "email": "sophia.johnson@example.com",
+              "phone": "+1-514-253-5337"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-7",
+              "type": "Conveyor",
+              "status": "offline",
+              "temperature": 58.16,
+              "vibration": 2.7,
+              "energy_consumption_kWh": 417.05,
+              "last_maintenance": "2021-12-31",
+              "error": "Vibration Alert",
+              "uptime_hours": 3859
+            },
+            {
+              "machine_id": "M-8",
+              "type": "Press",
+              "status": "error",
+              "temperature": 41.5,
+              "vibration": 0.87,
+              "energy_consumption_kWh": 2070.73,
+              "last_maintenance": "2015-11-12",
+              "error": "Sensor Fault",
+              "uptime_hours": 7574
+            },
+            {
+              "machine_id": "M-9",
+              "type": "Lathe",
+              "status": "maintenance",
+              "temperature": 21.84,
+              "vibration": 4.96,
+              "energy_consumption_kWh": 2061.52,
+              "last_maintenance": "2018-09-29",
+              "error": "Sensor Fault",
+              "uptime_hours": 9643
+            }
+          ]
+        },
+        {
+          "department_id": "S1D4",
+          "department_name": "Logistics",
+          "head": "Alice Chen",
+          "team": [
+            {
+              "name": "Mason Walker",
+              "role": "Supervisor",
+              "email": "ava.thompson@example.com",
+              "phone": "+1-514-683-1230"
+            },
+            {
+              "name": "Sophia Johnson",
+              "role": "Operator",
+              "email": "lucas.hall@example.com",
+              "phone": "+1-514-341-3439"
+            },
+            {
+              "name": "Ava Thompson",
+              "role": "Operator",
+              "email": "isabella.young@example.com",
+              "phone": "+1-514-235-9802"
+            },
+            {
+              "name": "Lucas Hall",
+              "role": "Analyst",
+              "email": "lucas.hall@example.com",
+              "phone": "+1-514-432-9792"
+            },
+            {
+              "name": "Isabella Young",
+              "role": "Technician",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-694-3116"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-10",
+              "type": "Lathe",
+              "status": "error",
+              "temperature": 68.43,
+              "vibration": 2.17,
+              "energy_consumption_kWh": 2991.27,
+              "last_maintenance": "2016-01-15",
+              "error": null,
+              "uptime_hours": 4630
+            },
+            {
+              "machine_id": "M-11",
+              "type": "Conveyor",
+              "status": "error",
+              "temperature": 91.63,
+              "vibration": 0.62,
+              "energy_consumption_kWh": 2014.21,
+              "last_maintenance": "2016-06-02",
+              "error": "Vibration Alert",
+              "uptime_hours": 5811
+            },
+            {
+              "machine_id": "M-12",
+              "type": "Press",
+              "status": "offline",
+              "temperature": 52.69,
+              "vibration": 4.14,
+              "energy_consumption_kWh": 4043.05,
+              "last_maintenance": "2016-05-13",
+              "error": "Power Failure",
+              "uptime_hours": 5531
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "S-2",
+      "site_name": "Quebec City Plant",
+      "location": "Montreal, QC",
+      "departments": [
+        {
+          "department_id": "S2D1",
+          "department_name": "Production",
+          "head": "Noah Clark",
+          "team": [
+            {
+              "name": "Ethan Wilson",
+              "role": "Operator",
+              "email": "mason.walker@example.com",
+              "phone": "+1-514-581-7612"
+            },
+            {
+              "name": "Olivia Davis",
+              "role": "Engineer",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-331-3668"
+            },
+            {
+              "name": "Olivia Davis",
+              "role": "Analyst",
+              "email": "emily.white@example.com",
+              "phone": "+1-514-980-6153"
+            },
+            {
+              "name": "Noah Clark",
+              "role": "Technician",
+              "email": "lucas.hall@example.com",
+              "phone": "+1-514-398-4548"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-13",
+              "type": "3D Printer",
+              "status": "error",
+              "temperature": 71.68,
+              "vibration": 1.75,
+              "energy_consumption_kWh": 2054.81,
+              "last_maintenance": "2017-04-02",
+              "error": "Vibration Alert",
+              "uptime_hours": 4514
+            },
+            {
+              "machine_id": "M-14",
+              "type": "Conveyor",
+              "status": "maintenance",
+              "temperature": 101.92,
+              "vibration": 1.18,
+              "energy_consumption_kWh": 2242.31,
+              "last_maintenance": "2017-07-11",
+              "error": "Vibration Alert",
+              "uptime_hours": 9037
+            },
+            {
+              "machine_id": "M-15",
+              "type": "Lathe",
+              "status": "maintenance",
+              "temperature": 47.91,
+              "vibration": 4.25,
+              "energy_consumption_kWh": 3896.1,
+              "last_maintenance": "2020-10-10",
+              "error": "Power Failure",
+              "uptime_hours": 5808
+            }
+          ]
+        },
+        {
+          "department_id": "S2D2",
+          "department_name": "Quality Control",
+          "head": "Ava Thompson",
+          "team": [
+            {
+              "name": "Robert Brown",
+              "role": "Engineer",
+              "email": "isabella.young@example.com",
+              "phone": "+1-514-718-9885"
+            },
+            {
+              "name": "Ethan Wilson",
+              "role": "Technician",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-577-4287"
+            },
+            {
+              "name": "Ava Thompson",
+              "role": "Supervisor",
+              "email": "emma.lewis@example.com",
+              "phone": "+1-514-769-3010"
+            },
+            {
+              "name": "Olivia Davis",
+              "role": "Analyst",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-811-8746"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Supervisor",
+              "email": "isabella.young@example.com",
+              "phone": "+1-514-787-7765"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-16",
+              "type": "Conveyor",
+              "status": "maintenance",
+              "temperature": 35.16,
+              "vibration": 1.45,
+              "energy_consumption_kWh": 1359.09,
+              "last_maintenance": "2020-07-25",
+              "error": "Vibration Alert",
+              "uptime_hours": 2224
+            },
+            {
+              "machine_id": "M-17",
+              "type": "Lathe",
+              "status": "maintenance",
+              "temperature": 40.13,
+              "vibration": 4.43,
+              "energy_consumption_kWh": 4022.88,
+              "last_maintenance": "2018-10-10",
+              "error": null,
+              "uptime_hours": 2738
+            },
+            {
+              "machine_id": "M-18",
+              "type": "CNC",
+              "status": "maintenance",
+              "temperature": 44.82,
+              "vibration": 4.83,
+              "energy_consumption_kWh": 1484.48,
+              "last_maintenance": "2018-05-24",
+              "error": "Sensor Fault",
+              "uptime_hours": 5092
+            }
+          ]
+        },
+        {
+          "department_id": "S2D3",
+          "department_name": "Maintenance",
+          "head": "Noah Clark",
+          "team": [
+            {
+              "name": "Michael Green",
+              "role": "Operator",
+              "email": "mason.walker@example.com",
+              "phone": "+1-514-285-7899"
+            },
+            {
+              "name": "John Smith",
+              "role": "Operator",
+              "email": "michael.green@example.com",
+              "phone": "+1-514-808-8698"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Analyst",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-848-2260"
+            },
+            {
+              "name": "Sophia Johnson",
+              "role": "Operator",
+              "email": "ava.thompson@example.com",
+              "phone": "+1-514-272-3916"
+            },
+            {
+              "name": "Sophia Johnson",
+              "role": "Technician",
+              "email": "sophia.johnson@example.com",
+              "phone": "+1-514-776-9458"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-19",
+              "type": "CNC",
+              "status": "maintenance",
+              "temperature": 49.82,
+              "vibration": 3.2,
+              "energy_consumption_kWh": 3838.0,
+              "last_maintenance": "2021-08-04",
+              "error": "Power Failure",
+              "uptime_hours": 6581
+            },
+            {
+              "machine_id": "M-20",
+              "type": "Conveyor",
+              "status": "operational",
+              "temperature": 98.89,
+              "vibration": 2.21,
+              "energy_consumption_kWh": 1297.79,
+              "last_maintenance": "2017-02-19",
+              "error": "Sensor Fault",
+              "uptime_hours": 5803
+            },
+            {
+              "machine_id": "M-21",
+              "type": "Lathe",
+              "status": "operational",
+              "temperature": 35.54,
+              "vibration": 1.99,
+              "energy_consumption_kWh": 4761.04,
+              "last_maintenance": "2015-12-04",
+              "error": "Sensor Fault",
+              "uptime_hours": 3651
+            }
+          ]
+        },
+        {
+          "department_id": "S2D4",
+          "department_name": "Logistics",
+          "head": "Sophia Johnson",
+          "team": [
+            {
+              "name": "Emily White",
+              "role": "Operator",
+              "email": "emma.lewis@example.com",
+              "phone": "+1-514-859-5945"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Analyst",
+              "email": "olivia.davis@example.com",
+              "phone": "+1-514-980-3935"
+            },
+            {
+              "name": "Isabella Young",
+              "role": "Supervisor",
+              "email": "john.smith@example.com",
+              "phone": "+1-514-709-7609"
+            },
+            {
+              "name": "Isabella Young",
+              "role": "Supervisor",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-651-4924"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-22",
+              "type": "Lathe",
+              "status": "operational",
+              "temperature": 84.7,
+              "vibration": 2.29,
+              "energy_consumption_kWh": 143.79,
+              "last_maintenance": "2021-12-04",
+              "error": "Power Failure",
+              "uptime_hours": 1023
+            },
+            {
+              "machine_id": "M-23",
+              "type": "Lathe",
+              "status": "operational",
+              "temperature": 79.39,
+              "vibration": 3.24,
+              "energy_consumption_kWh": 4451.35,
+              "last_maintenance": "2016-11-15",
+              "error": "Overheat",
+              "uptime_hours": 2051
+            },
+            {
+              "machine_id": "M-24",
+              "type": "3D Printer",
+              "status": "operational",
+              "temperature": 64.4,
+              "vibration": 0.5,
+              "energy_consumption_kWh": 1167.83,
+              "last_maintenance": "2016-02-02",
+              "error": "Sensor Fault",
+              "uptime_hours": 7599
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "S-3",
+      "site_name": "Toronto Operations",
+      "location": "Quebec City, QC",
+      "departments": [
+        {
+          "department_id": "S3D1",
+          "department_name": "Production",
+          "head": "Alice Chen",
+          "team": [
+            {
+              "name": "Mason Walker",
+              "role": "Engineer",
+              "email": "mason.walker@example.com",
+              "phone": "+1-514-160-4702"
+            },
+            {
+              "name": "Emma Lewis",
+              "role": "Operator",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-656-7609"
+            },
+            {
+              "name": "Emma Lewis",
+              "role": "Technician",
+              "email": "michael.green@example.com",
+              "phone": "+1-514-956-3949"
+            },
+            {
+              "name": "Liam Martin",
+              "role": "Technician",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-156-5180"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-25",
+              "type": "3D Printer",
+              "status": "error",
+              "temperature": 67.93,
+              "vibration": 3.68,
+              "energy_consumption_kWh": 1612.98,
+              "last_maintenance": "2018-08-12",
+              "error": "Vibration Alert",
+              "uptime_hours": 4272
+            },
+            {
+              "machine_id": "M-26",
+              "type": "Lathe",
+              "status": "offline",
+              "temperature": 117.75,
+              "vibration": 2.84,
+              "energy_consumption_kWh": 1373.63,
+              "last_maintenance": "2022-03-20",
+              "error": null,
+              "uptime_hours": 253
+            },
+            {
+              "machine_id": "M-27",
+              "type": "3D Printer",
+              "status": "offline",
+              "temperature": 21.08,
+              "vibration": 3.59,
+              "energy_consumption_kWh": 4902.75,
+              "last_maintenance": "2021-02-24",
+              "error": "Sensor Fault",
+              "uptime_hours": 9303
+            }
+          ]
+        },
+        {
+          "department_id": "S3D2",
+          "department_name": "Quality Control",
+          "head": "Michael Green",
+          "team": [
+            {
+              "name": "Mason Walker",
+              "role": "Technician",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-114-7672"
+            },
+            {
+              "name": "Ava Thompson",
+              "role": "Supervisor",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-263-7916"
+            },
+            {
+              "name": "Lucas Hall",
+              "role": "Operator",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-976-9170"
+            },
+            {
+              "name": "Lucas Hall",
+              "role": "Engineer",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-371-9131"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-28",
+              "type": "CNC",
+              "status": "offline",
+              "temperature": 90.65,
+              "vibration": 1.67,
+              "energy_consumption_kWh": 4454.58,
+              "last_maintenance": "2016-10-11",
+              "error": "Overheat",
+              "uptime_hours": 6577
+            },
+            {
+              "machine_id": "M-29",
+              "type": "Lathe",
+              "status": "operational",
+              "temperature": 65.78,
+              "vibration": 2.19,
+              "energy_consumption_kWh": 3192.23,
+              "last_maintenance": "2016-06-10",
+              "error": "Power Failure",
+              "uptime_hours": 1541
+            },
+            {
+              "machine_id": "M-30",
+              "type": "CNC",
+              "status": "offline",
+              "temperature": 38.02,
+              "vibration": 0.24,
+              "energy_consumption_kWh": 1412.62,
+              "last_maintenance": "2020-12-27",
+              "error": "Overheat",
+              "uptime_hours": 6741
+            }
+          ]
+        },
+        {
+          "department_id": "S3D3",
+          "department_name": "Maintenance",
+          "head": "Isabella Young",
+          "team": [
+            {
+              "name": "Lucas Hall",
+              "role": "Operator",
+              "email": "robert.brown@example.com",
+              "phone": "+1-514-369-1923"
+            },
+            {
+              "name": "Lucas Hall",
+              "role": "Technician",
+              "email": "ava.thompson@example.com",
+              "phone": "+1-514-929-9927"
+            },
+            {
+              "name": "Lucas Hall",
+              "role": "Supervisor",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-499-1563"
+            },
+            {
+              "name": "Alice Chen",
+              "role": "Operator",
+              "email": "emily.white@example.com",
+              "phone": "+1-514-549-1417"
+            },
+            {
+              "name": "Robert Brown",
+              "role": "Operator",
+              "email": "john.smith@example.com",
+              "phone": "+1-514-357-1730"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-31",
+              "type": "3D Printer",
+              "status": "error",
+              "temperature": 60.1,
+              "vibration": 2.53,
+              "energy_consumption_kWh": 2880.87,
+              "last_maintenance": "2017-05-13",
+              "error": "Overheat",
+              "uptime_hours": 6206
+            },
+            {
+              "machine_id": "M-32",
+              "type": "Press",
+              "status": "maintenance",
+              "temperature": 71.94,
+              "vibration": 1.15,
+              "energy_consumption_kWh": 3106.26,
+              "last_maintenance": "2015-12-30",
+              "error": "Power Failure",
+              "uptime_hours": 892
+            },
+            {
+              "machine_id": "M-33",
+              "type": "Lathe",
+              "status": "offline",
+              "temperature": 59.23,
+              "vibration": 4.05,
+              "energy_consumption_kWh": 2754.81,
+              "last_maintenance": "2022-05-09",
+              "error": "Sensor Fault",
+              "uptime_hours": 8088
+            }
+          ]
+        },
+        {
+          "department_id": "S3D4",
+          "department_name": "Logistics",
+          "head": "Isabella Young",
+          "team": [
+            {
+              "name": "Robert Brown",
+              "role": "Technician",
+              "email": "ava.thompson@example.com",
+              "phone": "+1-514-818-8187"
+            },
+            {
+              "name": "Alice Chen",
+              "role": "Analyst",
+              "email": "olivia.davis@example.com",
+              "phone": "+1-514-994-4818"
+            },
+            {
+              "name": "Olivia Davis",
+              "role": "Technician",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-321-6970"
+            },
+            {
+              "name": "Noah Clark",
+              "role": "Engineer",
+              "email": "alice.chen@example.com",
+              "phone": "+1-514-873-3819"
+            },
+            {
+              "name": "Noah Clark",
+              "role": "Technician",
+              "email": "john.smith@example.com",
+              "phone": "+1-514-290-3471"
+            }
+          ],
+          "machines": [
+            {
+              "machine_id": "M-34",
+              "type": "3D Printer",
+              "status": "operational",
+              "temperature": 85.44,
+              "vibration": 1.37,
+              "energy_consumption_kWh": 4170.71,
+              "last_maintenance": "2021-09-11",
+              "error": null,
+              "uptime_hours": 9617
+            },
+            {
+              "machine_id": "M-35",
+              "type": "Conveyor",
+              "status": "error",
+              "temperature": 95.38,
+              "vibration": 3.23,
+              "energy_consumption_kWh": 1118.84,
+              "last_maintenance": "2017-09-13",
+              "error": null,
+              "uptime_hours": 6987
+            },
+            {
+              "machine_id": "M-36",
+              "type": "Conveyor",
+              "status": "error",
+              "temperature": 41.52,
+              "vibration": 2.79,
+              "energy_consumption_kWh": 3931.41,
+              "last_maintenance": "2023-04-16",
+              "error": "Power Failure",
+              "uptime_hours": 2024
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
