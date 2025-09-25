@@ -12,7 +12,7 @@ const Filter = FiFilter as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 interface TopBarProps {
   onShowComparison?: () => void;
-  onShowErrors?: () => void;
+  onShowErrors?: () => void;  
 }
 
 const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
@@ -74,11 +74,14 @@ const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
           </div>
         </div>
 
-        {showFilters && (
-          <div className="mt-4 bg-gray-800 rounded-lg p-4">
-            <FilterPanel />
-          </div>
-        )}
+      <div
+      className={`transition-all duration-300 ease-in-out overflow-hidden
+      ${showFilters ? "mt-4 bg-gray-800 rounded-lg p-10 max-h-[500px] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"}
+      `}
+>
+  <FilterPanel />
+</div>
+
       </div>
     </div>
   );

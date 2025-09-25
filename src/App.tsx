@@ -12,6 +12,7 @@ const AppContent = () => {
   const { selectedSite } = useAppContext();
   const [showComparison, setShowComparison] = useState(false);
   const [showErrors, setShowErrors] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-900">
