@@ -1,5 +1,3 @@
-// TypeScript interfaces for the industrial sites data structure
-
 export interface TeamMember {
   name: string;
   role: string;
@@ -10,7 +8,7 @@ export interface TeamMember {
 export interface Machine {
   machine_id: string;
   type: string;
-  status: string; // 'online' | 'offline' | 'maintenance' | 'error' - more flexible for data
+  status: string;
   temperature: number;
   vibration: number;
   energy_consumption_kWh: number;
@@ -38,7 +36,6 @@ export interface IndustrialData {
   sites: Site[];
 }
 
-// Filter and sort types
 export interface FilterState {
   siteLocation: string;
   departmentType: string;
