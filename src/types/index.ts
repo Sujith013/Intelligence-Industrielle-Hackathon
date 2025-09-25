@@ -53,7 +53,6 @@ export interface SortState {
   direction: 'asc' | 'desc';
 }
 
-// Chart data types
 export interface ChartDataPoint {
   name: string;
   value: number;

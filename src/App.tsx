@@ -17,7 +17,7 @@ const AppContent = () => {
     <div className="min-h-screen bg-gray-900">
       <TopBar 
         onShowComparison={() => setShowComparison(true)}
-        onShowErrors={() => setShowErrors(true)}
+        onShowErrors={() => setShowErrors(!showErrors)}
       />
       
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">

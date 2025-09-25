@@ -1,11 +1,11 @@
-import React from 'react';
-import {FiSettings, FiFilter, FiBarChart2, FiAlertTriangle } from 'react-icons/fi';
+import React, {useState} from 'react';
+import {FiFilter, FiBarChart2, FiAlertTriangle } from 'react-icons/fi';
 import { useAppContext } from '../context/AppContext';
 import SearchBar from './SearchBar';
 import FilterPanel from './FilterPanel';
 import SortingControls from './SortingControls';
+import logo from '../logo.png';
 
-const Settings = FiSettings as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const BarChart2 = FiBarChart2 as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const AlertTriangle = FiAlertTriangle as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Filter = FiFilter as React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -17,31 +17,26 @@ interface TopBarProps {
 
 const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
   const { resetSelection } = useAppContext();
-  const [showFilters, setShowFilters] = React.useState(false);
+  const [showFilters, setShowFilters] = useState(false);
 
   return (
     <div className="bg-gray-900 border-b border-gray-800 p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-4">
-          {/* Logo and Title */}
           <div 
             className="flex items-center space-x-3 cursor-pointer"
-            onClick={resetSelection}
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Settings className="text-white text-xl" />
+            onClick={resetSelection} >
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+              <img src={logo} alt="Logo" className="text-white text-xl rounded-md" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">Industrial Intelligence</h1>
-              <p className="text-gray-400 text-sm">A visual overview of industrial operations</p>
+              <h1 className="text-2xl font-bold text-white">Intelligence Industrielle</h1>
             </div>
           </div>
 
-          {/* Actions */}
           <div className="flex items-center space-x-4">
             <SearchBar />
             
-            {/* Error Dashboard Button */}
             {onShowErrors && (
               <button
                 onClick={onShowErrors}
@@ -52,7 +47,6 @@ const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
               </button>
             )}
 
-            {/* Comparison Button */}
             {onShowComparison && (
               <button
                 onClick={onShowComparison}
@@ -63,10 +57,8 @@ const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
               </button>
             )}
 
-            {/* Sorting Controls */}
             <SortingControls />
             
-            {/* Filter Toggle */}
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`
@@ -82,7 +74,6 @@ const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
           </div>
         </div>
 
-        {/* Filter Panel */}
         {showFilters && (
           <div className="mt-4 bg-gray-800 rounded-lg p-4">
             <FilterPanel />
