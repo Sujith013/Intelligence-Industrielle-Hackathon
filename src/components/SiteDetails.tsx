@@ -118,7 +118,7 @@ const SiteDetails: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-colors duration-200"
+              className="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-colors ease-in-out duration-200"
             >
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-3">
                 <span className="text-white font-semibold">

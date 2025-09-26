@@ -152,23 +152,24 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                       <span className="text-white font-semibold">{machine.machine_id}</span>
                     </div>
                     
+                    <div className='md:flex md:space-x-4 text-center'>
                     <div className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(machine.status)}`}>
                       {machine.status.charAt(0).toUpperCase() + machine.status.slice(1)}
                     </div>
-                    
                     <span className="text-gray-300">{machine.type}</span>
+                    </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2 text-sm text-gray-300">
+                    <div className="hidden md:flex flex items-center space-x-2 text-sm text-gray-300">
                       <Thermometer />
                       <span>{machine.temperature.toFixed(1)}°C</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-300">
+                    <div className="hidden md:flex flex items-center space-x-2 text-sm text-gray-300">
                       <Zap />
                       <span>{machine.energy_consumption_kWh.toFixed(0)} kWh</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-300">
+                    <div className="hidden md:flex flex items-center space-x-2 text-sm text-gray-300">
                       <Clock />
                       <span>{machine.uptime_hours}h</span>
                     </div>
