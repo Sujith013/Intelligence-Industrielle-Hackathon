@@ -75,13 +75,10 @@ const TopBar: React.FC<TopBarProps> = ({ onShowComparison, onShowErrors }) => {
         </div>
 
       <div
-      className={`transition-all duration-300 ease-in-out overflow-hidden
-      ${showFilters ? "mt-4 bg-gray-800 rounded-lg p-10 max-h-[500px] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"}
-      `}
->
-  <FilterPanel />
-</div>
-
+        className={`transition-all duration-300 ease-in-out overflow-hidden
+        ${showFilters ? "mt-4 bg-gray-800 rounded-lg p-10 max-h-[500px] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"}`}>
+        <FilterPanel />
+      </div>
       </div>
     </div>
   );

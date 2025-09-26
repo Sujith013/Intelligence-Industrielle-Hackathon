@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recha
 import { motion } from 'framer-motion';
 import { useAppContext } from '../context/AppContext';
 
-const COLORS = ['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444'];
+const COLORS = ['#3B82F6', '#F59E0B', '#10B981', '#8B5CF6', '#EF4444'];
 
 const SitePieChart: React.FC = () => {
   const { filteredSites, setSelectedSite, selectedSite } = useAppContext();
@@ -18,7 +18,7 @@ const SitePieChart: React.FC = () => {
 
   const handlePieClick = (data: any) => {
     if (selectedSite?.site_id === data.site.site_id) {
-      setSelectedSite(null); // Deselect if already selected
+      setSelectedSite(null);
     } else {
       setSelectedSite(data.site);
     }
@@ -43,8 +43,7 @@ const SitePieChart: React.FC = () => {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-center">
-          <p className="text-gray-400 text-lg">No sites match your current filters</p>
-          <p className="text-gray-500 text-sm mt-2">Try adjusting your search criteria</p>
+          <p className="text-gray-400 text-lg">There are no sites matching your current filters</p>
         </div>
       </div>
     );
@@ -82,22 +81,17 @@ const SitePieChart: React.FC = () => {
                 <Cell 
                   key={`cell-${index}`} 
                   fill={entry.color}
-                  stroke={selectedSite?.site_id === entry.site.site_id ? '#FFFFFF' : 'transparent'}
-                  strokeWidth={selectedSite?.site_id === entry.site.site_id ? 3 : 0}
+                  strokeWidth={0}
                   className="hover:opacity-80 transition-opacity duration-200"
                 />
               ))}
+
             </Pie>
             <Tooltip content={<CustomTooltip />} />
-            <Legend 
-              wrapperStyle={{ color: '#D1D5DB' }}
-              formatter={(value) => <span style={{ color: '#D1D5DB' }}>{value}</span>}
-            />
           </PieChart>
         </ResponsiveContainer>
       </div>
 
-      {/* Site Statistics */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
         {pieData.map((site, index) => (
           <motion.div

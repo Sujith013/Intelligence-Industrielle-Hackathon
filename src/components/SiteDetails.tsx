@@ -4,7 +4,6 @@ import { FiMapPin, FiUsers, FiMail, FiPhone, FiArrowLeft } from 'react-icons/fi'
 import { useAppContext } from '../context/AppContext';
 import DepartmentCards from './DepartmentCards';
 
-// Type cast for React Icons
 const MapPin = FiMapPin as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Users = FiUsers as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Mail = FiMail as React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -18,7 +17,6 @@ const SiteDetails: React.FC = () => {
     return null;
   }
 
-  // Google Maps embed URL
   const mapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(selectedSite.location)}`;
   
   // Get all team members from all departments

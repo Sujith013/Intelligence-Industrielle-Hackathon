@@ -4,7 +4,6 @@ import { useAppContext } from '../context/AppContext';
 const FilterPanel: React.FC = () => {
   const { filters, setFilters, data } = useAppContext();
 
-  // Get unique values for filter dropdowns
   const locations = Array.from(new Set(data.sites.map(site => site.location)));
   const departmentTypes = Array.from(new Set(data.sites.flatMap(site => site.departments.map(dept => dept.department_name))));
   const machineStatuses = ['online', 'offline', 'maintenance', 'error'];

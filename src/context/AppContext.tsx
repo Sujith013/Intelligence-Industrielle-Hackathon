@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 import { IndustrialData, Site, FilterState, SortState } from '../types';
 import industrialData from '../data/industrial_sites.json';
 
@@ -41,15 +41,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [filters, setFilters] = useState<FilterState>(initialFilters);
   const [sorting, setSorting] = useState<SortState>(initialSorting);
 
-  // Filter sites based on current filters
-  const filteredSites = React.useMemo(() => {
+  const filteredSites = useMemo(() => {
     return industrialData.sites.filter(site => {
-      // Location filter
       if (filters.siteLocation && !site.location.toLowerCase().includes(filters.siteLocation.toLowerCase())) {
         return false;
       }
-      
-      // Search query filter
+
       if (filters.searchQuery) {
         const query = filters.searchQuery.toLowerCase();
         const siteMatch = site.site_name.toLowerCase().includes(query);

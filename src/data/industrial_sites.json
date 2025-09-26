@@ -67,7 +67,7 @@
             {
               "machine_id": "M-3",
               "type": "CNC",
-              "status": "error",
+              "status": "online",
               "temperature": 107.7,
               "vibration": 2.48,
               "energy_consumption_kWh": 1988.12,

@@ -2,10 +2,10 @@ import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useAppContext } from '../context/AppContext';
 
-// Type cast for React Icons
 const Search = FiSearch as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 const SearchBar: React.FC = () => {
+  
   const { filters, setFilters } = useAppContext();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
