@@ -147,7 +147,7 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                   </div>
                   <div className="bg-yellow-900/30 rounded-lg p-2 border border-yellow-500/30">
                     <div className="text-yellow-400 font-semibold text-sm">{statusCounts.maintenance}</div>
-                    <div className="text-gray-400 text-xs">Maintenance</div>
+                    <div className="text-gray-400 text-[0.63rem]">Maintenance</div>
                   </div>
                   <div className="bg-gray-900/30 rounded-lg p-2 border border-gray-500/30">
                     <div className="text-gray-400 font-semibold text-sm">{statusCounts.offline}</div>

@@ -93,11 +93,11 @@ const SiteDetails: React.FC = () => {
 
       <div className="bg-gray-800 rounded-lg p-6">
         <h3 className="text-xl font-bold text-white mb-4">Location</h3>
-        <div className="aspect-video bg-gray-700 rounded-sm overflow-hidden">
+        <div className="aspect-video bg-gray-700 rounded-md overflow-hidden h-96 w-full">
          
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center">
-              <iframe width="600" height="450" loading="lazy" className='rounded-md' 
+              <iframe width="800" height="300" loading="lazy" className='rounded-md' 
                 src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(selectedSite.location)}`}>
               </iframe>
             </div>

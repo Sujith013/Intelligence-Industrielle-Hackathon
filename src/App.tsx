@@ -14,16 +14,20 @@ const AppContent = () => {
   const [showErrors, setShowErrors] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="modal-content min-h-screen bg-gray-900">
       <TopBar 
         onShowComparison={() => setShowComparison(true)}
         onShowErrors={() => setShowErrors(!showErrors)}
       />
       
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-        {showErrors && <ErrorDashboard />}
         {selectedSite ? <SiteDetails /> : <SitePieChart />}
       </main>
+
+      <ErrorDashboard 
+        isOpen={showErrors} 
+        onClose={() => setShowErrors(false)} 
+      />
 
       <ComparisonView 
         isOpen={showComparison} 

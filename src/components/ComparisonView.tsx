@@ -30,7 +30,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
 
     const [site1, site2] = selectedSites;
     
-    // Machine status comparison
     const getStatusCounts = (site: Site) => {
       const allMachines = site.departments.flatMap(d => d.machines);
       return {
@@ -51,7 +50,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
       { name: 'Error', [site1.site_name]: site1Stats.error, [site2.site_name]: site2Stats.error },
     ];
 
-    // Department comparison
     const deptData = [
       { name: 'Departments', [site1.site_name]: site1.departments.length, [site2.site_name]: site2.departments.length },
       { 

@@ -8,10 +8,14 @@ const MapPin = FiMapPin as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Settings = FiSettings as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const AlertTriangle = FiAlertTriangle as React.ComponentType<React.SVGProps<SVGSVGElement>>;  
 
-const ErrorDashboard: React.FC = () => {
+interface DashBoardProps{
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ErrorDashboard: React.FC<DashBoardProps> = ({isOpen, onClose}) => {
   const { data } = useAppContext();
 
-  // Collect all machines with errors
   const errorMachines = data.sites.flatMap(site =>
     site.departments.flatMap(dept =>
       dept.machines
@@ -25,7 +29,6 @@ const ErrorDashboard: React.FC = () => {
     )
   );
 
-  // Sort by most recent issues first
   const sortedErrors = errorMachines.sort((a, b) => {
     if (a.status === 'error' && b.status !== 'error') return -1;
     if (b.status === 'error' && a.status !== 'error') return 1;
@@ -74,13 +77,23 @@ const ErrorDashboard: React.FC = () => {
     );
   }
 
+  if (!isOpen) return null;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-gray-800 rounded-lg p-6"
+    initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      onClick={onClose}>
+    <motion.div
+      initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="bg-gray-800 rounded-lg w-full max-w-6xl max-h-full overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-6 p-6">
         <h2 className="text-xl font-bold text-white flex items-center space-x-2">
           <AlertTriangle className="text-red-400" />
           <span>Error Dashboard</span>
@@ -90,8 +103,7 @@ const ErrorDashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Error Statistics */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 p-6">
         <div className="bg-gray-700 rounded-lg p-4">
           <div className="text-xl font-bold text-white">{sortedErrors.length}</div>
           <div className="text-gray-300 text-sm">Total Issues</div>
@@ -110,8 +122,7 @@ const ErrorDashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Error List */}
-      <div className="space-y-3 max-h-96 overflow-y-auto">
+      <div className="space-y-3 max-h-96 overflow-y-auto p-6">
         {sortedErrors.slice(0, 20).map((machine, index) => {
           const severity = getErrorSeverity(machine);
           const severityColor = getSeverityColor(severity);
@@ -166,7 +177,6 @@ const ErrorDashboard: React.FC = () => {
                 </div>
               </div>
 
-              {/* Machine Metrics */}
               <div className="grid grid-cols-3 gap-4 mt-3 pt-3 border-t border-current border-opacity-20">
                 <div>
                   <div className="text-xs text-gray-400">Temperature</div>
@@ -196,11 +206,12 @@ const ErrorDashboard: React.FC = () => {
       </div>
 
       {sortedErrors.length > 20 && (
-        <div className="mt-4 text-center text-gray-400 text-sm">
+        <div className="mt-4 text-center text-gray-400 text-sm p-3">
           Showing top 20 issues. {sortedErrors.length - 20} more issues available.
         </div>
       )}
     </motion.div>
+  </motion.div>
   );
 };
 
