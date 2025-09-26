@@ -3,7 +3,7 @@
     {
       "site_id": "S-1",
       "site_name": "Montreal Facility",
-      "location": "Toronto, ON",
+      "location": "Montreal, QC",
       "departments": [
         {
           "department_id": "S1D1",
@@ -291,8 +291,8 @@
     },
     {
       "site_id": "S-2",
-      "site_name": "Quebec City Plant",
-      "location": "Montreal, QC",
+      "site_name": "Vancouver City Plant",
+      "location": "Vancouver, BC",
       "departments": [
         {
           "department_id": "S2D1",
@@ -575,7 +575,7 @@
     {
       "site_id": "S-3",
       "site_name": "Toronto Operations",
-      "location": "Quebec City, QC",
+      "location": "Toronto, ON",
       "departments": [
         {
           "department_id": "S3D1",
