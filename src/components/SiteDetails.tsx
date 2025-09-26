@@ -16,15 +16,11 @@ const SiteDetails: React.FC = () => {
   if (!selectedSite) {
     return null;
   }
-
-  const mapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(selectedSite.location)}`;
   
-  // Get all team members from all departments
   const allTeamMembers = selectedSite.departments.flatMap(dept => 
     dept.team.map(member => ({ ...member, department: dept.department_name }))
   );
 
-  // Remove duplicates based on email
   const uniqueTeamMembers = allTeamMembers.filter((member, index, self) => 
     index === self.findIndex(m => m.email === member.email)
   );
@@ -38,7 +34,6 @@ const SiteDetails: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="space-y-6"
     >
-      {/* Header */}
       <div className="bg-gray-800 rounded-lg p-6">
         <button
           onClick={() => setSelectedSite(null)}
@@ -65,7 +60,6 @@ const SiteDetails: React.FC = () => {
           </div>
         </div>
 
-        {/* Site Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
           <div className="bg-gray-700 rounded-lg p-4">
             <div className="text-xl font-bold text-green-400">{totalMachines}</div>
@@ -93,34 +87,20 @@ const SiteDetails: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Google Maps */}
       <div className="bg-gray-800 rounded-lg p-6">
         <h3 className="text-xl font-bold text-white mb-4">Location</h3>
         <div className="aspect-video bg-gray-700 rounded-lg overflow-hidden">
-          {/* Placeholder for Google Maps - you'll need to add your API key */}
+         
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center">
-              <MapPin className="text-4xl text-gray-500 mx-auto mb-2" />
-              <p className="text-gray-400">Google Maps</p>
-              <p className="text-gray-500 text-sm">{selectedSite.location}</p>
-              <p className="text-gray-600 text-xs mt-2">Add your Google Maps API key to enable maps</p>
+              <iframe width="600" height="450" loading="lazy" 
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(selectedSite.location)}`}>
+              </iframe>
             </div>
           </div>
-          {/* Uncomment and add your API key to enable maps */}
-          {/* <iframe
-            src={mapsEmbedUrl}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe> */}
         </div>
       </div>
 
-      {/* Meet the Team */}
       <div className="bg-gray-800 rounded-lg p-6">
         <div className="flex items-center space-x-2 mb-6">
           <Users className="text-xl text-blue-400" />
@@ -136,7 +116,6 @@ const SiteDetails: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-colors duration-200"
             >
-              {/* Avatar placeholder */}
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-3">
                 <span className="text-white font-semibold">
                   {member.name.split(' ').map(n => n[0]).join('')}
@@ -163,8 +142,6 @@ const SiteDetails: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Departments */}
       <DepartmentCards departments={selectedSite.departments} />
     </motion.div>
   );

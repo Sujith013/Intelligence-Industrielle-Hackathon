@@ -63,7 +63,7 @@ const SitePieChart: React.FC = () => {
         </p>
       </div>
 
-      <div className="h-96">
+      <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -92,13 +92,9 @@ const SitePieChart: React.FC = () => {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-1 grid grid-cols-1 md:grid-cols-3 gap-4">
         {pieData.map((site, index) => (
-          <motion.div
-            key={site.site.site_id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+          <div
             className={`
               p-4 rounded-lg border cursor-pointer transition-all duration-200
               ${selectedSite?.site_id === site.site.site_id
@@ -122,7 +118,7 @@ const SitePieChart: React.FC = () => {
               <span className="text-gray-300">Departments: {site.value}</span>
               <span className="text-gray-300">Machines: {site.machineCount}</span>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </motion.div>
