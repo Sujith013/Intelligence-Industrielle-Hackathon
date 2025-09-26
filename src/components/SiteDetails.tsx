@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React,{useState} from 'react';
+import { motion, useScroll } from 'framer-motion';
 import { FiMapPin, FiUsers, FiMail, FiPhone, FiArrowLeft } from 'react-icons/fi';
 import { useAppContext } from '../context/AppContext';
 import DepartmentCards from './DepartmentCards';
@@ -12,6 +12,7 @@ const ArrowLeft = FiArrowLeft as React.ComponentType<React.SVGProps<SVGSVGElemen
 
 const SiteDetails: React.FC = () => {
   const { selectedSite, setSelectedSite } = useAppContext();
+  const [showTeam,setShowTeam] = useState(false);
 
   if (!selectedSite) {
     return null;
@@ -87,13 +88,16 @@ const SiteDetails: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <DepartmentCards departments={selectedSite.departments} />
+
       <div className="bg-gray-800 rounded-lg p-6">
         <h3 className="text-xl font-bold text-white mb-4">Location</h3>
-        <div className="aspect-video bg-gray-700 rounded-lg overflow-hidden">
+        <div className="aspect-video bg-gray-700 rounded-sm overflow-hidden">
          
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center">
-              <iframe width="600" height="450" loading="lazy" 
+              <iframe width="600" height="450" loading="lazy" className='rounded-md' 
                 src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(selectedSite.location)}`}>
               </iframe>
             </div>
@@ -101,13 +105,13 @@ const SiteDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-gray-800 rounded-lg p-6">
-        <div className="flex items-center space-x-2 mb-6">
+            <div className="bg-gray-800 rounded-lg p-6">
+        <button className="flex items-center space-x-2 p-4 rounded-md bg-gray-900 hover:bg-gray-900 transition-colors duration-200" onClick={()=>setShowTeam(!showTeam)}>
           <Users className="text-xl text-blue-400" />
           <h3 className="text-xl font-bold text-white">Meet the Team</h3>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        </button>
+
+        {showTeam && (<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {uniqueTeamMembers.map((member, index) => (
             <motion.div
               key={`${member.email}-${index}`}
@@ -140,9 +144,8 @@ const SiteDetails: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div>)}
       </div>
-      <DepartmentCards departments={selectedSite.departments} />
     </motion.div>
   );
 };
