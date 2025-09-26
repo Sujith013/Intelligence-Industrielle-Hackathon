@@ -5,7 +5,11 @@ import { useAppContext } from '../context/AppContext';
 const Download = FiDownload as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const ArrowUp = FiArrowUp as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
-const SortingControls: React.FC = () => {
+interface SortingControlsProps {
+  screenSize?: 'sm' | 'lg';
+}
+
+const SortingControls: React.FC<SortingControlsProps> = ({ screenSize }) => {
   const { sorting, setSorting, data } = useAppContext();
 
   const handleSort = (field: string, type: 'department' | 'machine' | 'team') => {
@@ -35,7 +39,6 @@ const SortingControls: React.FC = () => {
   };
 
   const exportToCSV = () => {
-    // Flatten data for CSV export
     const csvData: any[] = [];
     
     data.sites.forEach(site => {
@@ -76,8 +79,7 @@ const SortingControls: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center space-x-4">
-      {/* Sorting Controls */}
+    <div className={`${screenSize==='lg'?'flex flex-row':'flex flex-col space-y-4'} items-center space-x-4`}>
       <div className="flex items-center space-x-2">
         <ArrowUp className="text-gray-400" />
         <select
@@ -95,7 +97,6 @@ const SortingControls: React.FC = () => {
         </select>
       </div>
 
-      {/* Export Controls */}
       <div className="flex items-center space-x-2">
         <button
           onClick={exportToJSON}

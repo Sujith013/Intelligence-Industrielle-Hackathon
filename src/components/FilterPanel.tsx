@@ -43,7 +43,6 @@ const FilterPanel: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Site Location Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">
             Site Location
@@ -60,7 +59,6 @@ const FilterPanel: React.FC = () => {
           </select>
         </div>
 
-        {/* Department Type Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">
             Department
@@ -77,7 +75,6 @@ const FilterPanel: React.FC = () => {
           </select>
         </div>
 
-        {/* Machine Status Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">
             Machine Status
@@ -96,7 +93,6 @@ const FilterPanel: React.FC = () => {
           </select>
         </div>
 
-        {/* Machine Type Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">
             Machine Type
@@ -114,7 +110,6 @@ const FilterPanel: React.FC = () => {
         </div>
       </div>
 
-      {/* Threshold Filters */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">

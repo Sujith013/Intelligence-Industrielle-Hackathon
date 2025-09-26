@@ -18,14 +18,12 @@ interface DepartmentCardsProps {
 const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
   const { selectedDepartmentId, setSelectedDepartmentId, filters, sorting } = useAppContext();
 
-  // Apply filters to departments
   const filteredDepartments = departments.filter(dept => {
-    // Department type filter
+
     if (filters.departmentType && dept.department_name !== filters.departmentType) {
       return false;
     }
 
-    // Check if department has machines that match filters
     if (filters.machineStatus || filters.machineType || filters.temperatureThreshold || filters.uptimeThreshold) {
       const matchingMachines = dept.machines.filter(machine => {
         if (filters.machineStatus && machine.status !== filters.machineStatus) return false;
@@ -41,7 +39,6 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
     return true;
   });
 
-  // Sort departments
   const sortedDepartments = [...filteredDepartments].sort((a, b) => {
     const direction = sorting.direction === 'asc' ? 1 : -1;
     
@@ -139,7 +136,6 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                   </div>
                 </div>
 
-                {/* Machine Status Summary */}
                 <div className="grid grid-cols-4 gap-2 mb-4">
                   <div className="bg-green-900/30 rounded-lg p-2 border border-green-500/30">
                     <div className="text-green-400 font-semibold text-sm">{statusCounts.online}</div>
@@ -159,7 +155,6 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                   </div>
                 </div>
 
-                {/* Team Summary */}
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-2 text-gray-400">
                     <Users className="text-xs" />
@@ -169,7 +164,6 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                 </div>
               </div>
 
-              {/* Expanded Content */}
               <AnimatePresence>
                 {isExpanded && (
                   <motion.div
@@ -179,7 +173,7 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                     transition={{ duration: 0.3 }}
                     className="mt-4"
                   >
-                    {/* Team Members */}
+
                     <div className="bg-gray-700 rounded-lg p-4 mb-4">
                       <h5 className="text-white font-semibold mb-3">Team Members</h5>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -204,7 +198,6 @@ const DepartmentCards: React.FC<DepartmentCardsProps> = ({ departments }) => {
                       </div>
                     </div>
 
-                    {/* Machines */}
                     <MachineList machines={dept.machines} departmentName={dept.department_name} />
                   </motion.div>
                 )}

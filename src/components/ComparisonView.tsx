@@ -64,7 +64,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
       }
     ];
 
-    // Average metrics comparison
     const getAvgMetrics = (site: Site) => {
       const allMachines = site.departments.flatMap(d => d.machines);
       const count = allMachines.length;
@@ -108,7 +107,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6">
-          {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">Site Comparison</h2>
             <button
@@ -119,7 +117,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
             </button>
           </div>
 
-          {/* Site Selection */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-4">Select Sites to Compare (max 2)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -160,14 +157,12 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Comparison Results */}
           {comparisonData && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              {/* Site Overview */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {selectedSites.map((site, index) => (
                   <div key={site.site_id} className="bg-gray-700 rounded-lg p-4">
@@ -204,9 +199,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
                 ))}
               </div>
 
-              {/* Charts */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Machine Status Comparison */}
                 <div className="bg-gray-700 rounded-lg p-4">
                   <h4 className="text-lg font-semibold text-white mb-4">Machine Status Comparison</h4>
                   <div className="h-64">
@@ -229,7 +222,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
-                {/* Department & Resources Comparison */}
                 <div className="bg-gray-700 rounded-lg p-4">
                   <h4 className="text-lg font-semibold text-white mb-4">Resources Comparison</h4>
                   <div className="h-64">
@@ -253,7 +245,6 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              {/* Metrics Table */}
               <div className="bg-gray-700 rounded-lg p-4">
                 <h4 className="text-lg font-semibold text-white mb-4">Average Metrics Comparison</h4>
                 <div className="overflow-x-auto">

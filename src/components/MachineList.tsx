@@ -32,14 +32,12 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
   const { filters, sorting } = useAppContext();
   const [expandedMachine, setExpandedMachine] = useState<string | null>(null);
 
-  // Apply machine-specific filters
   const filteredMachines = machines.filter(machine => {
     if (filters.machineStatus && machine.status !== filters.machineStatus) return false;
     if (filters.machineType && machine.type !== filters.machineType) return false;
     if (filters.temperatureThreshold && machine.temperature <= filters.temperatureThreshold) return false;
     if (filters.uptimeThreshold && machine.uptime_hours < filters.uptimeThreshold) return false;
     
-    // Search filter
     if (filters.searchQuery) {
       const query = filters.searchQuery.toLowerCase();
       if (!machine.machine_id.toLowerCase().includes(query) &&
@@ -51,7 +49,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
     return true;
   });
 
-  // Sort machines
   const sortedMachines = [...filteredMachines].sort((a, b) => {
     const direction = sorting.direction === 'asc' ? 1 : -1;
     
@@ -89,7 +86,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
     }
   };
 
-  // Generate sample time series data for charts (since we don't have historical data)
   const generateTimeSeriesData = (machine: Machine) => {
     const hours = 24;
     const data = [];
@@ -104,7 +100,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
     return data;
   };
 
-  // Temperature gauge data
   const getTemperatureGaugeData = (temperature: number) => {
     const maxTemp = 120;
     const percentage = (temperature / maxTemp) * 100;
@@ -145,7 +140,7 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
               transition={{ delay: index * 0.05 }}
               className="bg-gray-700 rounded-lg overflow-hidden"
             >
-              {/* Machine Header */}
+
               <div
                 className="p-4 cursor-pointer hover:bg-gray-600 transition-colors duration-200"
                 onClick={() => setExpandedMachine(isExpanded ? null : machine.machine_id)}
@@ -193,7 +188,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                 )}
               </div>
 
-              {/* Expanded Content */}
               {isExpanded && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -202,7 +196,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                   className="border-t border-gray-600"
                 >
                   <div className="p-4 space-y-6">
-                    {/* Machine Details Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="bg-gray-600 rounded-lg p-3">
                         <div className="text-gray-400 text-sm">Temperature</div>
@@ -227,9 +220,7 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                       </div>
                     </div>
 
-                    {/* Charts Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      {/* Temperature Trend */}
                       <div className="bg-gray-600 rounded-lg p-4">
                         <h5 className="text-white font-semibold mb-3">Temperature Trend (24h)</h5>
                         <div className="h-48">
@@ -257,7 +248,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                         </div>
                       </div>
 
-                      {/* Temperature Gauge */}
                       <div className="bg-gray-600 rounded-lg p-4">
                         <h5 className="text-white font-semibold mb-3">Temperature Status</h5>
                         <div className="h-48 flex items-center justify-center">
@@ -273,7 +263,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                         </div>
                       </div>
 
-                      {/* Energy Consumption */}
                       <div className="bg-gray-600 rounded-lg p-4">
                         <h5 className="text-white font-semibold mb-3">Energy Usage (24h)</h5>
                         <div className="h-48">
@@ -295,7 +284,6 @@ const MachineList: React.FC<MachineListProps> = ({ machines, departmentName }) =
                         </div>
                       </div>
 
-                      {/* Vibration Chart */}
                       <div className="bg-gray-600 rounded-lg p-4">
                         <h5 className="text-white font-semibold mb-3">Vibration Levels (24h)</h5>
                         <div className="h-48">
