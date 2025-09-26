@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiAlertTriangle, FiClock, FiMapPin, FiSettings } from 'react-icons/fi';
+import { FiX, FiAlertTriangle, FiClock, FiMapPin, FiSettings } from 'react-icons/fi';
 import { useAppContext } from '../context/AppContext';
 
+const X = FiX as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Clock = FiClock as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const MapPin = FiMapPin as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const Settings = FiSettings as React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -99,7 +100,14 @@ const ErrorDashboard: React.FC<DashBoardProps> = ({isOpen, onClose}) => {
           <span>Error Dashboard</span>
         </h2>
         <div className="text-red-400 text-sm">
-          {sortedErrors.length} active issues
+          {sortedErrors.length} active issues 
+          {
+            <button
+              onClick={onClose}
+              className="p-2 translate-y-1 text-gray-400 hover:text-white transition-colors">
+              <X className="text-xl"/>
+            </button>
+        }
         </div>
       </div>
 
