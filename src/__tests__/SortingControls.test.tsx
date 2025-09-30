@@ -110,8 +110,9 @@ describe('SortingControls Component', () => {
   it('should display arrow up icon', () => {
     renderWithProvider();
     
-    // Check if the icon container is present
-    const iconContainer = screen.getByDisplayValue('Departments A-Z').previousElementSibling;
+    // Check if the icon container (parent of the select) is present
+    const selectElement = screen.getByDisplayValue('Departments A-Z');
+    const iconContainer = selectElement.parentElement;
     expect(iconContainer).toHaveClass('flex', 'items-center', 'space-x-2');
   });
 });
