@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SortingControls from './SortingControls';
+import SortingControls from '../components/SortingControls';
 import { AppProvider } from '../context/AppContext';
 
 // Mock URL.createObjectURL and related methods for file download tests

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SearchBar from './SearchBar';
+import SearchBar from '../components/SearchBar';
 import { AppProvider } from '../context/AppContext';
 
 const renderWithProvider = (props = {}) => {

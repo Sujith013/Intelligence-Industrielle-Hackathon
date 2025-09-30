@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import FilterPanel from './FilterPanel';
+import FilterPanel from '../components/FilterPanel';
 import { AppProvider } from '../context/AppContext';
 
 const renderWithProvider = () => {
