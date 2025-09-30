@@ -44,10 +44,11 @@ const FilterPanel: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="site-location" className="block text-sm font-medium text-gray-300 mb-1">
             Site Location
           </label>
           <select
+            id="site-location"
             value={filters.siteLocation}
             onChange={(e) => handleFilterChange('siteLocation', e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -60,10 +61,11 @@ const FilterPanel: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="department" className="block text-sm font-medium text-gray-300 mb-1">
             Department
           </label>
           <select
+            id="department"
             value={filters.departmentType}
             onChange={(e) => handleFilterChange('departmentType', e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -76,10 +78,11 @@ const FilterPanel: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="machine-status" className="block text-sm font-medium text-gray-300 mb-1">
             Machine Status
           </label>
           <select
+            id="machine-status"
             value={filters.machineStatus}
             onChange={(e) => handleFilterChange('machineStatus', e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -94,10 +97,11 @@ const FilterPanel: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="machine-type" className="block text-sm font-medium text-gray-300 mb-1">
             Machine Type
           </label>
           <select
+            id="machine-type"
             value={filters.machineType}
             onChange={(e) => handleFilterChange('machineType', e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -112,10 +116,11 @@ const FilterPanel: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="temperature-threshold" className="block text-sm font-medium text-gray-300 mb-1">
             Temperature Threshold (°C)
           </label>
           <input
+            id="temperature-threshold"
             type="number"
             placeholder="e.g., 80"
             value={filters.temperatureThreshold || ''}
@@ -125,10 +130,11 @@ const FilterPanel: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="uptime-threshold" className="block text-sm font-medium text-gray-300 mb-1">
             Min Uptime Hours
           </label>
           <input
+            id="uptime-threshold"
             type="number"
             placeholder="e.g., 1000"
             value={filters.uptimeThreshold || ''}
